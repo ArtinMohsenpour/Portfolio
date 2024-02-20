@@ -8,9 +8,10 @@
   --black-color: #030303;
   --lightGray-color: #fec5b2;
   --gray-color: #6b7688;
-  --brown-color: #ccbc9f ;
+  --brown-color: #ccbc9f;
   --white-color: #ffffffa0;
 }
+
 
 * {
   box-sizing: border-box;

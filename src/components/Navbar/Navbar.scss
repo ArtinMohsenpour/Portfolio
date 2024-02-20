@@ -197,3 +197,53 @@
 .HiX {
   min-width: 20px;
 }
+
+.dark-mode-switch {
+  position: relative;
+  display: inline-block;
+  width: 54px;
+  height: 24px;
+  margin-left: 1rem;
+  border: 5px;
+  p {
+    width: 120%;
+    font-size: 0.7rem;
+    margin-top: 1.55rem;
+  }
+}
+
+.dark-mode-switch input {
+  display: none;
+}
+
+.dark-mode-switch label {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--secondary-color);
+  border-radius: 17px;
+  transition: background-color 0.4s;
+}
+
+.dark-mode-switch label:after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0px;
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.4s;
+}
+
+.dark-mode-switch input:checked + label {
+  background-color: var(--gray-color); /* Green color */
+}
+
+.dark-mode-switch input:checked + label:after {
+  transform: translateX(26px);
+}

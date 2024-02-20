@@ -23,8 +23,8 @@ const Header = () => (
       transition={{ duration: 0.5 }}
       className="app__header-info "
     >
-      <Tilt className="app__header-badge box__container">
-        <Tilt className="badge-cmp app__flex  shadow__1">
+      <Tilt className="app__header-badge box__container ">
+        <Tilt className="badge-cmp app__flex  shadow__1 ">
           <img
             className="logo__container"
             src={images.hello}
@@ -36,7 +36,7 @@ const Header = () => (
           </div>
         </Tilt>
 
-        <Tilt className="tag-cmp app__flex shadow__1">
+        <Tilt className="tag-cmp app__flex shadow__1 ">
           <p className="p-text">Frontend Web Developer</p>
 
           <p className="p-text">UI designer</p>

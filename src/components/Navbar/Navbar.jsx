@@ -7,7 +7,7 @@ import resume from "../../assets/resume.pdf";
 import downloadIcon from "../../assets/download-icon.png";
 //
 
-const Navbar = () => {
+const Navbar = ({ setDarkMode, darkMode }) => {
   const [toggle, setToggle] = useState(false);
 
   return (
@@ -17,6 +17,15 @@ const Navbar = () => {
           <img src={images.logo} alt="logo" />
         </a>
         <p className="p-text">Portfolio</p>
+      </div>
+      <div class="dark-mode-switch">
+        <input
+          type="checkbox"
+          id="dark-mode-toggle"
+          onClick={() => setDarkMode(!darkMode)}
+        />
+        <label for="dark-mode-toggle"></label>
+        <p className="p-text">Dark Mode</p>
       </div>
       <ul className="app__navbar-links">
         <div className="app__flex link__container">
