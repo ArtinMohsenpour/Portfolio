@@ -18,15 +18,6 @@ const Navbar = ({ setDarkMode, darkMode }) => {
         </a>
         <p className="p-text">Portfolio</p>
       </div>
-      <div class="dark-mode-switch">
-        <input
-          type="checkbox"
-          id="dark-mode-toggle"
-          onClick={() => setDarkMode(!darkMode)}
-        />
-        <label for="dark-mode-toggle"></label>
-        <p className="p-text">Dark Mode</p>
-      </div>
       <ul className="app__navbar-links">
         <div className="app__flex link__container">
           {["home", "about", "work", "skills", "contact"].map((item) => {
