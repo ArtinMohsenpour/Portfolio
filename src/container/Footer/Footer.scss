@@ -140,3 +140,15 @@
     margin: 1rem 0;
   }
 }
+.container {
+  align-items: center;
+  font-size: 1rem;
+  text-align: center;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin: 1rem;
+    margin-bottom: 0.25rem;
+    font-size: 0.75rem;
+    bottom: 0;
+  }
+}

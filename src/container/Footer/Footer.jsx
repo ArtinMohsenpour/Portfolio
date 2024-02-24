@@ -133,8 +133,20 @@ const Footer = () => {
       )}
 
       <div>
-        <div className="container">
-          <p>&copy; 2024 Abolfazl Mohsenpour. All Rights Reserved.</p>
+        <div
+          className="container"
+          style={{ marginTop: "50px", color: "#6b7688" }}
+        >
+          <p>
+            &copy; 2024{" "}
+            <a
+              style={{ textDecoration: "none" }}
+              href="https://artinmohsenpour.com/"
+            >
+              Abolfazl Mohsenpour
+            </a>
+            . All Rights Reserved.
+          </p>
         </div>
       </div>
     </>
