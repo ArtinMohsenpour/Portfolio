@@ -1,7 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jura&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 :root {
   --font-base: "DM Sans", sans-serif;
+  --font-header1: "Do Hyeon, sans-serif", sans-serif;
+  --font-header2: "Jura", sans-serif;
+  --font-header3: "Josefin Slab", sans-serif;
 
   --primary-color: #edf2f8;
   --secondary-color: #6f9cc9;
@@ -11,7 +21,6 @@
   --brown-color: #ccbc9f;
   --white-color: #ffffffa0;
 }
-
 
 * {
   box-sizing: border-box;

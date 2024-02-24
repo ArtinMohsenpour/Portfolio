@@ -1,6 +1,7 @@
 #home {
   position: relative;
-  background: url("../../assets/bgIMG.png");
+  background: url("../../assets/bgIMG.jpg");
+
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
@@ -40,29 +41,29 @@
   flex: 0.65;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   height: 100%;
 
-  margin: 0 2rem;
+  margin-top: -6rem;
 
   @media screen and (max-width: 1280px) {
     width: 100%;
+    margin-top: 0rem;
     margin-right: 0rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+      align-self: center;
+    }
   }
 }
 
 .box__container {
   position: relative;
 }
-
 .app__header-badge {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  flex-direction: column;
-
   .logo__container {
     width: 6rem;
     margin: 0;
@@ -71,17 +72,33 @@
   .badge-cmp,
   .tag-cmp {
     padding: 1rem 2rem;
-    background: #edf2f8;
+    //background: #edf2f874;
     border-radius: 15px;
     flex-direction: row;
-    width: auto;
+    width: fit-content;
 
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    //box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    img {
+      width: 6rem;
+    }
   }
-
+  div {
+    align-self: center;
+    justify-self: center;
+    h1 {
+      font-size: 38px;
+      @media screen and (max-width: 1480px) {
+        font-size: 1.8rem;
+      }
+      @media screen and (max-width: 1280px) {
+        font-size: 38px;
+      }
+    }
+  }
   .tag-cmp {
     flex-direction: column;
     margin-top: 3rem;
+    align-items: center;
 
     p {
       width: 100%;
@@ -91,7 +108,7 @@
   }
 
   span {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
 
     @media screen and (min-width: 1920px) {
       font-size: 5rem;
@@ -101,7 +118,31 @@
   @media screen and (max-width: 1280px) {
     justify-content: flex-start;
     align-items: flex-start;
+    div {
+      align-self: center;
+      justify-self: center;
+    }
   }
+}
+.header__text_p {
+  font-size: 1rem;
+  font-weight: 300;
+  text-align: center;
+  color: var(--gray-color);
+  margin-bottom: 3rem;
+  // text-align: justify;
+
+  @media screen and (min-width: 1920px) {
+    font-size: 1.25rem;
+  }
+}
+.job_text {
+  color: var(--gray-color);
+  text-align: center;
+}
+.job_text2 {
+  color: rgba(95, 95, 95, 0.621);
+  text-align: center;
 }
 
 .app__header-circles {
@@ -113,7 +154,7 @@
   height: 100%;
   margin-left: 1rem;
   z-index: 10;
-
+  margin-bottom: 4rem;
   div {
     width: 100px;
     height: 100px;
@@ -329,4 +370,3 @@
   box-shadow: inset 4px 4px 5px rgb(255, 255, 255, 0.2),
     inset -4px -4px 5px rgb(0, 0, 0, 0.1), 10px 40px 40px rgb(0, 0, 0, 0.1);
 }
-

@@ -4,6 +4,7 @@ import { Tilt } from "react-tilt";
 import { AppWrap } from "../../wrapper";
 import { images } from "../../constants";
 import "./Header.scss";
+import logo from "../../assets/logo2.png";
 
 const scaleVariants = {
   whileInView: {
@@ -19,29 +20,68 @@ const scaleVariants = {
 const Header = () => (
   <div className="app__header app__flex">
     <motion.div
-      whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-      transition={{ duration: 0.5 }}
-      className="app__header-info "
+      whileInView={{ x: [-120, 0], opacity: [0, 1] }}
+      transition={{ duration: 0.9 }}
+      className="app__header-info app__header-badge"
     >
-      <Tilt className="app__header-badge box__container ">
-        <Tilt className="badge-cmp app__flex  shadow__1 ">
-          <img
-            className="logo__container"
-            src={images.hello}
-            alt="profile_bg"
-          />
-          <div style={{ marginLeft: 20 }}>
-            <p className="p-text">My name is</p>
-            <h1 className="head-text">Abolfazl</h1>
-          </div>
-        </Tilt>
-
-        <Tilt className="tag-cmp app__flex shadow__1 ">
-          <p className="p-text">Frontend Web Developer</p>
-
-          <p className="p-text">UI designer</p>
-        </Tilt>
+      <Tilt className="badge-cmp app__flex">
+        <div
+          style={{ margin: 7, display: "flex", flexDirection: "column" }}
+          className=""
+        >
+          <p
+            style={{
+              marginRight: "3rem",
+              fontFamily: "Arial, sans-serif",
+              fontSize: "32px",
+            }}
+            className="job_text2"
+          >
+            My name is{" "}
+          </p>
+          <h1
+            className="job_text"
+            style={{
+              fontFamily: "Lato, serif",
+              fontWeight: "bold",
+              fontSize: "56px",
+            }}
+          >
+            ABOLFAZL
+          </h1>
+        </div>
       </Tilt>
+
+      <Tilt
+        className="box__container job_text"
+        style={{ alignItems: "center" }}
+      >
+        <p
+          style={{
+            fontFamily: "Jura, sans-serif",
+            fontSize: "28px",
+            fontWeight: "normal",
+          }}
+          className="job_text"
+        >
+          Frontend Web Developer <p>and UI Designer</p>
+        </p>
+      </Tilt>
+      <Tilt className="badge-cmp">
+        <img src={logo} alt="logo" />
+      </Tilt>
+      <motion.div className="badge-cmp">
+        <p
+          style={{
+            fontFamily: "Raleway, fantasy",
+            fontSize: "16px",
+            color: "#777",
+          }}
+          className="header__text_p"
+        >
+          32756 Detmold, NRW, Deutschland
+        </p>
+      </motion.div>
     </motion.div>
 
     <motion.div
@@ -67,7 +107,10 @@ const Header = () => (
       className="app__header-circles box__container"
     >
       {[images.redux, images.react, images.sass].map((circle, index) => (
-        <Tilt className="circle-cmp app__flex shadow__1" key={`circle-${index}`}>
+        <Tilt
+          className="circle-cmp app__flex shadow__1"
+          key={`circle-${index}`}
+        >
           <img src={circle} alt="profile background" />
         </Tilt>
       ))}
