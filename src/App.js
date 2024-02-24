@@ -1,5 +1,5 @@
 // import components
-import React, { useState } from "react";
+import React from "react";
 import { About, Work, Testimonial, Skills, Header, Footer } from "./container";
 import { Navbar } from "./components";
 import "./App.scss";
