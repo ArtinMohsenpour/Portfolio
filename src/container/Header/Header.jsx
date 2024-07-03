@@ -4,7 +4,6 @@ import { Tilt } from "react-tilt";
 import { AppWrap } from "../../wrapper";
 import { images } from "../../constants";
 import "./Header.scss";
-import logo from "../../assets/logo2.png";
 
 const scaleVariants = {
   whileInView: {
