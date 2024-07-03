@@ -31,13 +31,12 @@ const Header = () => (
         >
           <p
             style={{
-              marginRight: "3rem",
               fontFamily: "Arial, sans-serif",
               fontSize: "32px",
             }}
             className="job_text2"
           >
-            My name is{" "}
+            You can call me{" "}
           </p>
           <h1
             className="job_text"
@@ -47,7 +46,7 @@ const Header = () => (
               fontSize: "56px",
             }}
           >
-            ABOLFAZL
+            ARTIN
           </h1>
         </div>
       </Tilt>
@@ -64,12 +63,12 @@ const Header = () => (
           }}
           className="job_text"
         >
-          Frontend Web Developer <p>and UI Designer</p>
+          Web Developer <p>and Software Engineer</p>
         </p>
       </Tilt>
-      <Tilt className="badge-cmp">
+      {/* <Tilt className="badge-cmp">
         <img src={logo} alt="logo" />
-      </Tilt>
+      </Tilt> */}
       <motion.div className="badge-cmp">
         <p
           style={{
@@ -79,7 +78,7 @@ const Header = () => (
           }}
           className="header__text_p"
         >
-          32756 Detmold, NRW, Deutschland
+          50931 Köln, NRW, Deutschland
         </p>
       </motion.div>
     </motion.div>

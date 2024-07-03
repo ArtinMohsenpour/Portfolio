@@ -16,36 +16,44 @@ const Skills = () => {
 
   //
   const skillsArray = [
-    "HTML5",
-    "CSS3",
+    "HTML/CSS",
     "JavaScript",
-    "React",
-    "redux",
-    "hooks",
-    "Rest APIs",
     "TypeScript",
+    "React",
+    "Redux",
+    "Hooks",
+    "REST APIs",
+    "React Native",
     "Python",
-    "JQUERY",
-    "Next.js",
+    "C",
+    "C++",
+    "jQuery",
     "Three.js",
-    "Git, GitHub",
-    "Datatypes",
+    "SQL",
+    "Machine Learning Frameworks",
+    "Git",
+    "GitHub",
+    "Next.js",
+    "Node.js",
     "Bootstrap",
     "SASS",
     "Tailwind",
     "Figma",
     "Adobe XD",
-    "UI",
+    "UI Design",
   ];
   const softSkills = [
-    "Responsive Design",
-    "Communication",
-    "E-Commerce",
-    "Problem-Solving",
-    "Team Collaboration",
-    "Time Management",
-    "Attention to Detail",
-    "Accountability",
+    "Expertise in Responsive Design",
+    "Professional Prompt Writer for AI",
+    "E-Commerce Specialist",
+    "Strong Communication",
+    "Exceptional Problem-Solving",
+    "Effective Team Collaboration",
+    "Excellent Time Management",
+    "Keen Attention to Detail",
+    "High Accountability",
+    "Online Marketing",
+    "CMS",
   ];
   //
 
@@ -57,6 +65,7 @@ const Skills = () => {
 
   useEffect(() => {
     const itemsToFind = [
+      "Research Assistant",
       "Frontend Web Developer",
       "Student Work",
       "UI Design Internship",
@@ -66,6 +75,7 @@ const Skills = () => {
     const fetchExperiences = async () => {
       try {
         const data = await client.fetch('*[_type == "experiences"]');
+        console.log(data);
         const array1 = data.filter((el) =>
           itemsToFind.includes(el.works[0]?.name)
         );
@@ -76,7 +86,7 @@ const Skills = () => {
             itemsToFind.indexOf(b.works[0]?.name)
           );
         });
-
+        console.log(array1);
         setExperiences(array1);
       } catch (error) {
         console.error("Error fetching experiences data:", error);
