@@ -17,7 +17,9 @@ const Work = () => {
     const query = '*[_type == "works"]';
 
     client.fetch(query).then((data) => {
-      const array1 = data.filter((work) => work.tags.includes("React"));
+      const array1 = data.filter((work) =>
+        work.tags.includes("E-commerce" || "React")
+      );
       const array2 = [...array1, ...data].filter(
         (item, index, self) => self.indexOf(item) === index
       );
