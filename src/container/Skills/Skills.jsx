@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Tilt } from "react-tilt";
 import { images } from "../../constants";
-
+import SkillsRows from "../../components/SkillsRows.jsx";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Skills.scss";
@@ -111,14 +111,10 @@ const Skills = () => {
       <h2 className="head-text">Skills & Experiences</h2>
 
       <div className="app__skills-container">
-        <motion.div className="app__skills-list">
-          {skills.map((skill) => (
-            <motion.div
-              key={skill.name}
-              whileInView={{ opacity: [0, 1] }}
-              transition={{ duration: 0.5 }}
-              className="app__skills-item app__flex "
-            >
+        
+          <SkillsRows skills={skills} />
+          {/* {skills.map((skill) => (
+            <div className="app__skills-item app__flex ">
               <Tilt
                 className="app__flex shadow__2"
                 style={{ backgroundColor: skill.bgColor }}
@@ -132,9 +128,9 @@ const Skills = () => {
               <p key={skill.name + `${Math.random() * 100}`} className="p-text">
                 {skill.name}
               </p>
-            </motion.div>
-          ))}
-        </motion.div>
+            </div>
+          ))} */}
+       
         <div className="card__container">
           <motion.div
             className="card__container_card shadow__1"

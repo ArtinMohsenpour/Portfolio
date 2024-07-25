@@ -20,10 +20,7 @@
 .app__skills-list {
   flex: 1;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-
+  flex-direction: row;
   margin-right: 5rem;
 
   @media screen and (max-width: 900px) {
