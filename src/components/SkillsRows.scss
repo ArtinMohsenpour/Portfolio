@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     margin-right: 5rem;
-    flex-wrap: wrap;
+    flex-wrap:nowrap;
   
     @media screen and (max-width: 900px) {
       margin-right: 0;
@@ -12,3 +12,51 @@
       flex-direction: column;
     }
   }
+  
+  .animate_1 {
+    animation: movingRow ;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  
+  @keyframes flashing {
+    0%, 100% {
+      opacity: 0.2;
+    }
+    20% {
+      opacity: 1;
+    }
+  }
+  
+  /* Define animations with their respective properties */
+  .animate-marquee {
+    animation: marquee 7s linear infinite;
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 1.5s linear forwards;
+  }
+  
+  .animate-flashing {
+    animation: flashing 0.4s infinite linear;
+  }
+  
