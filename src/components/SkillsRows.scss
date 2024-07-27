@@ -1,15 +1,20 @@
 .app__skills-list {
     flex: 1;
     display: flex;
-    flex-direction: column;
-    margin-right: 5rem;
-    flex-wrap:nowrap;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    overflow-x: hidden;
+  
+    
   
     @media screen and (max-width: 900px) {
       margin-right: 0;
       justify-content: center;
+      flex-wrap: nowrap;
       align-items: center;
-      flex-direction: column;
+      flex-direction: row;
+      overflow-x: hidden;
+     
     }
   }
   
@@ -31,7 +36,7 @@
       transform: translateX(0%);
     }
     50% {
-      transform: translateX(-50%);
+      transform: translateX(-30%);
     }
     100% {
       transform: translateX(0%);
@@ -60,3 +65,12 @@
     animation: flashing 0.4s infinite linear;
   }
   
+
+  .app__skills-listContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    overflow-x: hidden;
+    flex-wrap: wrap;
+    border-radius: 5%;
+  }

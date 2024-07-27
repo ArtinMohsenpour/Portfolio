@@ -73,7 +73,7 @@ const Skill = ({ skill, ...props }) => {
       style={{ animationDelay }}
     >
       <div
-        className="app__flex shadow__2 "
+        className="app__flex shadow__1 "
         style={{ backgroundColor: skill.bgColor }}
         key={skill.name + `${Math.random() * 100}`}
       >

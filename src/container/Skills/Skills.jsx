@@ -111,26 +111,26 @@ const Skills = () => {
       <h2 className="head-text">Skills & Experiences</h2>
 
       <div className="app__skills-container">
-        
-          <SkillsRows skills={skills} />
-          {/* {skills.map((skill) => (
+        <div className="app__skills-listContainer">
+          {/* //<SkillsRows skills={skills} /> */}
+          {skills.map((skill) => (
             <div className="app__skills-item app__flex ">
-              <Tilt
-                className="app__flex shadow__2"
-                style={{ backgroundColor: skill.bgColor }}
-              >
-                <img
-                  key={skill.name + `${Math.random() * 100}`}
-                  src={urlFor(skill.icon)}
-                  alt={skill.name}
-                />
-              </Tilt>
-              <p key={skill.name + `${Math.random() * 100}`} className="p-text">
-                {skill.name}
-              </p>
+            <Tilt
+            className="app__flex shadow__2"
+            style={{ backgroundColor: skill.bgColor }}
+            >
+            <img
+            key={skill.name + `${Math.random() * 100}`}
+            src={urlFor(skill.icon)}
+            alt={skill.name}
+            />
+            </Tilt>
+            <p key={skill.name + `${Math.random() * 100}`} className="p-text">
+            {skill.name}
+            </p>
             </div>
-          ))} */}
-       
+            ))}
+        </div>
         <div className="card__container">
           <motion.div
             className="card__container_card shadow__1"
