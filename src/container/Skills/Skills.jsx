@@ -21,40 +21,36 @@ const Skills = () => {
     "TypeScript",
     "React",
     "Redux",
-    "Hooks",
-    "REST APIs",
-    "React Native",
-    "Python",
-    "C",
-    "C++",
-    "jQuery",
-    "Three.js",
-    "SQL",
-    "Machine Learning Frameworks",
-    "Git",
-    "GitHub",
     "Next.js",
     "Node.js",
+    "Hooks",
+    "REST APIs",
+    "Python",
+    "jQuery",
+    "SQL",
+    "Git",
+    "GitHub",
     "Bootstrap",
     "SASS",
     "Tailwind",
     "Figma",
     "Adobe XD",
-    "UI Design",
   ];
   const softSkills = [
-    "Expertise in Responsive Design",
-    "Professional Prompt Writer for AI",
-    "E-Commerce Specialist",
-    "Strong Communication",
-    "Exceptional Problem-Solving",
-    "Effective Team Collaboration",
-    "Excellent Time Management",
-    "Keen Attention to Detail",
-    "High Accountability",
-    "Online Marketing",
-    "CMS",
+    { name: "Expertise in Responsive Design", src: images.resDesign },
+    { name: "Professional Prompt Writer for AI", src: images.ai },
+    { name: "E-Commerce Specialist", src: images.onlineshop },
+    { name: "Strong Communication", src: images.conversation },
+    { name: "Problem-Solving", src: images.problemsovling },
+    { name: "Effective Team Collaboration", src: images.united },
+    { name: "Excellent Time Management", src: images.time },
+    { name: "Keen Attention to Detail", src: images.detail },
+    { name: "High Accountability", src: images.dailytask },
+    { name: "Scrum", src: images.scrum },
+    { name: "CMS", src: images.cms },
+    { name: "CI/CD", src: images.cicd },
   ];
+
   //
 
   const toggleDes = (desc, workCompany) => {
@@ -115,24 +111,24 @@ const Skills = () => {
           {/* //<SkillsRows skills={skills} /> */}
           {skills.map((skill) => (
             <div className="app__skills-item app__flex ">
-            <Tilt
-            className="app__flex shadow__2"
-            style={{ backgroundColor: skill.bgColor }}
-            >
-            <img
-            key={skill.name + `${Math.random() * 100}`}
-            src={urlFor(skill.icon)}
-            alt={skill.name}
-            />
-            </Tilt>
-            <p key={skill.name + `${Math.random() * 100}`} className="p-text">
-            {skill.name}
-            </p>
+              <Tilt
+                className="app__flex shadow__2"
+                style={{ backgroundColor: skill.bgColor }}
+              >
+                <img
+                  key={skill.name + `${Math.random() * 100}`}
+                  src={urlFor(skill.icon)}
+                  alt={skill.name}
+                />
+              </Tilt>
+              <p key={skill.name + `${Math.random() * 100}`} className="p-text">
+                {skill.name}
+              </p>
             </div>
-            ))}
+          ))}
         </div>
         <div className="card__container">
-          <motion.div
+          {/* <motion.div
             className="card__container_card shadow__1"
             whileInView={{ opacity: 1 }}
             whileHover={{ scale: 1.1 }}
@@ -149,23 +145,30 @@ const Skills = () => {
                 <span className="p-text">{skill}</span>
               </Tilt>
             ))}
-          </motion.div>
+          </motion.div> */}
           <motion.div
             className="card__container_card shadow__1"
             whileInView={{ opacity: 1 }}
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.5, type: "tween" }}
           >
-            <h2>Soft Skills</h2>
+            <h2 className="header__skills">Soft Skills</h2>
             {softSkills.map((skill) => (
-              <Tilt
-                key={skill}
-                whileInView={{ opacity: [0, 1] }}
-                transition={{ duration: 0.8 }}
-                className="card__container_item shadow__2"
-              >
-                <span className="p-text">{skill}</span>
-              </Tilt>
+              <div className="skill__row">
+                <Tilt
+                  key={skill}
+                  whileInView={{ opacity: [0, 1] }}
+                  transition={{ duration: 0.8 }}
+                  className="card__container_item shadow__2 skill__row2"
+                >
+                  <img
+                    key={skill.name + `${Math.random() * 100}`}
+                    src={skill.src}
+                    alt="image"
+                  />
+                  <p className="p-text">{skill.name}</p>
+                </Tilt>
+              </div>
             ))}
           </motion.div>
         </div>

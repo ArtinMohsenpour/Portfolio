@@ -38,7 +38,33 @@ import nb from "../assets/nb.png";
 import skype from "../assets/skype.png";
 import spotify from "../assets/spotify.png";
 
+//
+import resDesign from "../assets/responsive-design.png"
+import ai from "../assets/ai.png"
+import onlineshop from "../assets/online-shop.png"
+import conversation from "../assets/conversation.png"
+import problemsovling from "../assets/problem.png"
+import time from "../assets/time.png"
+import united from "../assets/united.png"
+import detail from "../assets/detail.png"
+import dailytask from "../assets/daily-tasks.png"
+import scrum from "../assets/scrum.png"
+import cicd from "../assets/cicd.png"
+import cms from "../assets/cms.png"
+
 const images = {
+  cicd,
+  united,
+  resDesign,
+  conversation,
+problemsovling,
+time,
+  scrum,
+  ai,
+onlineshop,
+detail,
+dailytask,
+  cms,
   arrowdown,
   email,
   mobile,

@@ -10,12 +10,22 @@
 
   display: flex;
   flex-direction: column;
+ 
 
   @media screen and (max-width: 1920px) {
     width: 80%;
     flex-direction: column;
   }
 }
+
+.app__skills-listContainer{
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .app__skills-list {
   flex: 1;
@@ -162,16 +172,22 @@
     margin-bottom: 4rem;
   }
 }
+
+.header__skills{
+color: #264148bf;
+}
+
+
+
 .card__container_card {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   width: 100%;
   background-color: #edf2f8;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   border-radius: 1rem;
-  
-    
   margin: 2rem;
   padding: 1rem;
   &:hover {
@@ -180,44 +196,83 @@
   h2 {
     text-align: center;
     width: 100%;
-
+    
     font-size: 2.5rem;
-
+    
     @media screen and (min-width: 1920px) {
       font-size: 3rem;
     }
   }
-
+  
   div {
     font-size: 1rem;
     @media screen and (min-width: 1920px) {
       font-size: 1.8rem;
     }
   }
-
+  
   @media screen and (max-width: 1280px) {
-    width: 70%;
-
+    width: 100%;
+    
     align-self: center;
   }
-
+  
   @media screen and (max-width: 920px) {
     width: 100%;
-
+    
     margin-top: 1.2rem;
   }
-
+  
   @media screen and (min-width: 1920px) {
-    width: 40%;
-
+    width: 100%;
+    
     margin-top: 1.2rem;
     margin: 1rem;
   }
 }
+
+.skill__row{
+  display: flex; /* Use flexbox */
+  flex-direction: row; /* Arrange items in a row */
+  align-items: center; /* Center items vertically */
+  //justify-content: flex-start; /* Align items to the start horizontally */
+  width: auto;
+ /* Ensures padding and border are included in the width */
+  padding: 0.5rem; /* Adjust as needed */
+   /* Adjust as needed */
+  img{
+    width: auto;
+    max-width: 40px;
+   height: auto;
+   margin-right:0.5rem ;
+  }
+
+  p{
+    margin: 0;
+  }
+}
+.skill__row2{
+  display: flex; /* Use flexbox */
+  flex-direction: row; /* Arrange items in a row */
+  align-items: center; /* Center items vertically */
+  flex-wrap: wrap;
+  //justify-content: flex-start; /* Align items to the start horizontally */
+  width: auto;
+ /* Ensures padding and border are included in the width */
+  padding: 0.9rem; /* Adjust as needed */
+   /* Adjust as needed */
+  img{
+    width: 30px;
+   height: auto;
+   margin-right:0.5rem ;
+  }
+
+  p{
+    margin: 0.2rem;
+  }
+}
+
 .card__container_item {
-  display: flex;
-  position: relative;
-  flex-direction: row;
   background-color: #f9f9f985;
   margin: 0.25rem;
   padding: 0.18rem;
