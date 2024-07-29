@@ -19,7 +19,7 @@
     </ul>
     <h2>Screenshot</h2>
     <p>Here is a preview of my portfolio website:</p>
-    <img src="screenshot.png" alt="Screenshot of my portfolio website" width="800">
+    <img src="src/assets/screenshot.png" alt="Screenshot of my portfolio website" width="800">
     <h2>Contact Information</h2>
     <p><strong>Abolfazl Mohsenpour</strong><br>
     Web Developer and Software Engineer<br>
