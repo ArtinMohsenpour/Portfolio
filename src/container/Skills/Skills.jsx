@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Tilt } from "react-tilt";
 import { images } from "../../constants";
-import SkillsRows from "../../components/SkillsRows.jsx";
+//import SkillsRows from "../../components/SkillsRows.jsx";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Skills.scss";
@@ -15,27 +15,27 @@ const Skills = () => {
   const [companyName, setCompanyName] = useState("");
 
   //
-  const skillsArray = [
-    "HTML/CSS",
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Redux",
-    "Next.js",
-    "Node.js",
-    "Hooks",
-    "REST APIs",
-    "Python",
-    "jQuery",
-    "SQL",
-    "Git",
-    "GitHub",
-    "Bootstrap",
-    "SASS",
-    "Tailwind",
-    "Figma",
-    "Adobe XD",
-  ];
+  // const skillsArray = [
+  //   "HTML/CSS",
+  //   "JavaScript",
+  //   "TypeScript",
+  //   "React",
+  //   "Redux",
+  //   "Next.js",
+  //   "Node.js",
+  //   "Hooks",
+  //   "REST APIs",
+  //   "Python",
+  //   "jQuery",
+  //   "SQL",
+  //   "Git",
+  //   "GitHub",
+  //   "Bootstrap",
+  //   "SASS",
+  //   "Tailwind",
+  //   "Figma",
+  //   "Adobe XD",
+  // ];
   const softSkills = [
     { name: "Expertise in Responsive Design", src: images.resDesign },
     { name: "Professional Prompt Writer for AI", src: images.ai },
