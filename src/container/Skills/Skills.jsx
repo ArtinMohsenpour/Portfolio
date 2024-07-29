@@ -164,7 +164,7 @@ const Skills = () => {
                   <img
                     key={skill.name + `${Math.random() * 100}`}
                     src={skill.src}
-                    alt="image-skill-sets"
+                    alt="skill-sets"
                   />
                   <p className="p-text">{skill.name}</p>
                 </Tilt>
