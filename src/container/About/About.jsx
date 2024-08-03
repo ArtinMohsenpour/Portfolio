@@ -43,16 +43,20 @@ const About = () => {
                 whileInView={{ opacity: 1 }}
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.5, type: "tween" }}
-                className={`app__profile-item box__container ${isHovered && "hovered"}`}
+                className={`app__profile-item box__container ${
+                  isHovered && ""
+                }`}
                 key={key}
                 onMouseEnter={() => handleMouseEnter(key)}
                 onMouseLeave={handleMouseLeave}
               >
-                <img
-                  src={urlFor(about.imgUrl)}
-                  alt={about.title}
-                  className="shadow__1"
-                />
+                <div className={`${isHovered && "hovered"}`}>
+                  <img
+                    src={urlFor(about.imgUrl)}
+                    alt={about.title}
+                    className="shadow__1"
+                  />
+                </div>
                 <h2 className="bold-text" style={{ marginTop: 20 }}>
                   {about.title}
                 </h2>

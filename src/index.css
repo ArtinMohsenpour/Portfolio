@@ -7,6 +7,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
 :root {
   --font-base: "DM Sans", sans-serif;
   --font-header1: "Do Hyeon, sans-serif", sans-serif;
@@ -20,6 +26,11 @@
   --gray-color: #6b7688;
   --brown-color: #ccbc9f;
   --white-color: #ffffffa0;
+  --clr-1: #0040ffd2;
+  --clr-2: #ffffffb5;
+  --clr-3: #ffffffa8;
+  --clr-4: #ffffff;
+  --clr-5: #f90404cb;
 }
 
 * {
