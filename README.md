@@ -17,7 +17,7 @@
         <li><strong>User Experience</strong>: Focused on providing a user-friendly interface with easy navigation.</li>
         <li><strong>Project Showcase</strong>: Detailed descriptions and demonstrations of my past projects, highlighting my skills and contributions.</li>
     </ul>
-    <h2>Screenshot</h2>
+    <h2>Overview</h2>
     <p>Here is a preview of my portfolio website:</p>
     <img src="src/assets/screenshot.png" alt="Screenshot of my portfolio website" width="800">
     <h2>Contact Information</h2>
