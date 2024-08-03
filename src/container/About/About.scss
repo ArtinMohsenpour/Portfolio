@@ -16,7 +16,7 @@
   left: 0;
   animation: movingText linear;
   animation-timeline: scroll();
-  @media screen and (max-width: 980px) {
+  @media screen and (max-width: 720px) {
     animation: none;
   }
 }
@@ -84,11 +84,25 @@
   }
 }
 .box__container .shadow__1 {
+  display: inline-block;
+  position: relative;
   box-shadow: -15px -15px 15px rgba(45, 45, 45, 0.297),
     15px 15px 15px rgba(0, 0, 0, 0.211);
 }
 .box__container .shadow__2 {
+  display: inline-block;
+  position: relative;
   box-shadow: inset 4px 4px 5px rgb(255, 255, 255, 0.2),
     inset -4px -4px 5px rgb(0, 0, 0, 0.1), 10px 40px 40px rgb(0, 0, 0, 0.1);
 }
 
+
+
+.hovered::before{
+
+}
+.hovered::after{
+  content: "";
+position:absolute;
+inset:0
+}
