@@ -11,7 +11,7 @@ const Work = () => {
   const [filterWork, setFilterWork] = useState([]);
   const [activeFilter, setActiveFilter] = useState("All");
   //const [sorted, setSorted] = useState(false);
-  const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
+ // const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
   const workRef = useRef(null);
 

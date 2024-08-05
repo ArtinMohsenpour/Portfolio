@@ -73,17 +73,16 @@ const Skills = () => {
 
   useEffect(() => {
     const itemsToFind = [
-      "Research Assistant",
       "Frontend Web Developer",
+      "Research Assistant",
       "Student Work",
-      "UI Design Internship",
-      "Internship for bachelor degree",
+      "UI/UX Design Internship",
+      "Software Developer",
       "Student Consultant",
     ];
     const fetchExperiences = async () => {
       try {
         const data = await client.fetch('*[_type == "experiences"]');
-        console.log(data);
         const array1 = data.filter((el) =>
           itemsToFind.includes(el.works[0]?.name)
         );
