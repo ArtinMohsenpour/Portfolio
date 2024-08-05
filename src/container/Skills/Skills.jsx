@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Tilt } from "react-tilt";
 import { images } from "../../constants";
 //import SkillsRows from "../../components/SkillsRows.jsx";
@@ -13,6 +13,18 @@ const Skills = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [desc, setDesc] = useState("");
   const [companyName, setCompanyName] = useState("");
+
+  const headingRef = useRef(null);
+
+  // Scroll progress for heading
+  const { scrollYProgress } = useScroll({
+    target: headingRef,
+    offset: ["0 1", "1 0"],
+  });
+
+  // Transform the progress to letter-spacing values
+  const letterSpacing = useTransform(scrollYProgress, [0, 0.7], ["1em", "0em"]);
+
 
   //
   // const skillsArray = [
@@ -104,7 +116,16 @@ const Skills = () => {
 
   return (
     <>
-      <h2 className="head-text">Skills & Experiences</h2>
+      <motion.h2
+        ref={headingRef}
+        style={{
+          letterSpacing: letterSpacing,
+          
+        }}
+        className="head-text"
+      >
+        Skills & Experiences
+      </motion.h2>
 
       <div className="app__skills-container">
         <div className="app__skills-listContainer">

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
@@ -12,6 +12,15 @@ const Work = () => {
   const [activeFilter, setActiveFilter] = useState("All");
   //const [sorted, setSorted] = useState(false);
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
+
+  const workRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: workRef,
+    offset: ["0 1", "0.28 1"],
+  });
+
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   useEffect(() => {
     const query = '*[_type == "works"]';
@@ -56,23 +65,28 @@ const Work = () => {
       </h2>
 
       <div className="app__work-filter">
-        {["JavaScript","TypeScript", "React", "E-commerce", "All"].map((item, index) => (
-          <div
-            key={index}
-            onClick={() => handleWorkFilter(item)}
-            className={`app__work-filter-item app__flex p-text shadow__2 ${
-              activeFilter === item ? "item-active" : ""
-            }`}
-          >
-            {item}
-          </div>
-        ))}
+        {["JavaScript", "TypeScript", "React", "E-commerce", "All"].map(
+          (item, index) => (
+            <div
+              key={index}
+              onClick={() => handleWorkFilter(item)}
+              className={`app__work-filter-item app__flex p-text shadow__2 ${
+                activeFilter === item ? "item-active" : ""
+              }`}
+            >
+              {item}
+            </div>
+          )
+        )}
       </div>
 
       <motion.div
-        animate={animateCard}
-        transition={{ duration: 0.5, delayChildren: 0.5 }}
         className="app__work-portfolio"
+        ref={workRef}
+        style={{
+          scale: scaleProgress,
+          opacity: scaleProgress,
+        }}
       >
         {filterWork.map((work, index) => (
           <div className="app__work-item app__flex" key={index}>
