@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 import { AppWrap, MotionWrap } from "../../wrapper";
 import "./About.scss";
@@ -32,16 +32,43 @@ const About = () => {
 
   const { scrollYProgress } = useScroll({
     target: { leftTextRef },
-    offset: ["0 1", "1.33 1"],
+    offset: ["0 1", "0.24 1"],
   });
+  const scrollLeftProgress = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["-40%", "0%"]
+  );
+  
+  const { scrollYProgress: rightScrollProgress } = useScroll({
+    target: { leftTextRef },
+    offset: ["0 1", "0.24 1"],
+  });
+  const scrollRightProgress = useTransform(
+    rightScrollProgress,
+    [0, 1],
+    ["+40%", "0%"]
+  );
 
   return (
     <>
-      <motion.div ref={leftTextRef} className="head-text text__scroll_left ">
+      <motion.div
+        ref={leftTextRef}
+        style={{
+          translateX: scrollLeftProgress,
+        }}
+        className="head-text  "
+      >
         <span className="black__span">I Know that</span>{" "}
         <span>Good Design</span> <br />
       </motion.div>
-      <motion.div ref={rightTextRef} className="head-text text__scroll_right">
+      <motion.div
+        ref={rightTextRef}
+        style={{
+          translateX: scrollRightProgress,
+        }}
+        className="head-text"
+      >
         <span className="black__span">means</span> <span>Good Business </span>{" "}
       </motion.div>
       <div className="wrapper__scroll">
