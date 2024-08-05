@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect, useRef } from "react";
+import { motion, useScroll } from "framer-motion";
 
 import { AppWrap, MotionWrap } from "../../wrapper";
 import "./About.scss";
@@ -9,12 +9,17 @@ const About = () => {
   const [abouts, setAbouts] = useState([]);
   const [hovered, setHovered] = useState(null);
 
+  const leftTextRef = useRef(null);
+  const rightTextRef = useRef(null);
+  /////////
+
   const handleMouseEnter = (key) => {
     setHovered(key);
   };
   const handleMouseLeave = () => {
     setHovered(null);
   };
+  /////////
 
   useEffect(() => {
     const query = '*[_type == "abouts"]';
@@ -23,16 +28,22 @@ const About = () => {
       setAbouts(data);
     });
   }, []);
+  //////////
+
+  const { scrollYProgress } = useScroll({
+    target: { leftTextRef },
+    offset: ["0 1", "1.33 1"],
+  });
 
   return (
     <>
-      <div className="head-text text__scroll_left ">
+      <motion.div ref={leftTextRef} className="head-text text__scroll_left ">
         <span className="black__span">I Know that</span>{" "}
         <span>Good Design</span> <br />
-      </div>
-      <div className="head-text text__scroll_right">
+      </motion.div>
+      <motion.div ref={rightTextRef} className="head-text text__scroll_right">
         <span className="black__span">means</span> <span>Good Business </span>{" "}
-      </div>
+      </motion.div>
       <div className="wrapper__scroll">
         <div className="app__profiles box__container">
           {abouts.map((about, index) => {

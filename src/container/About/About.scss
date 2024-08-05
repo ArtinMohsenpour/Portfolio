@@ -18,6 +18,23 @@
   margin-top: 2rem;
 }
 
+@keyframes movingText {
+  0% {
+    transform: translateX(-20%);
+  }
+  14% {
+    transform: translateX(0);
+  }
+}
+@keyframes movingText2 {
+  0% {
+    transform: translateX(20%);
+  }
+  14% {
+    transform: translateX(0);
+  }
+}
+
 .text__scroll_left {
   left: 0;
   animation: movingText linear;
@@ -35,22 +52,6 @@
   }
 }
 
-@keyframes movingText {
-  0% {
-    transform: translateX(-20%);
-  }
-  14% {
-    transform: translateX(0);
-  }
-}
-@keyframes movingText2 {
-  0% {
-    transform: translateX(20%);
-  }
-  14% {
-    transform: translateX(0);
-  }
-}
 
 .black__span {
   color: black !important;
@@ -110,7 +111,7 @@
   position: absolute;
   inset: 0.35rem;
   z-index: -1;
-  border-radius: 15px;
+  border-radius: 5px;
   background: linear-gradient(
     var(--gradient-angle),
     var(--clr-1),
@@ -123,7 +124,7 @@
 }
 
 .hovered::after {
-  filter: blur(2.5rem);
+  filter: blur(1.5rem);
   z-index: -1;
 }
 
