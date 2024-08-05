@@ -10,18 +10,12 @@ const Work = () => {
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
   const [activeFilter, setActiveFilter] = useState("All");
+  const workRef = useRef(null);
   //const [sorted, setSorted] = useState(false);
  // const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
-  const workRef = useRef(null);
 
-  const { scrollYProgress } = useScroll({
-    target: workRef,
-    offset: ["0 1", "0.28 1"],
-  });
-
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0, 1]);
-
+  
   useEffect(() => {
     const query = '*[_type == "works"]';
 
@@ -41,11 +35,9 @@ const Work = () => {
   const handleWorkFilter = (item) => {
     // setSorted(true);
     setActiveFilter(item);
-    setAnimateCard([{ y: 100, opacity: 0 }]);
-
+  
     setTimeout(() => {
-      setAnimateCard([{ y: 0, opacity: 1 }]);
-      console.log(item);
+
       if (item === "All") {
         setFilterWork(works);
       } else {
@@ -57,6 +49,17 @@ const Work = () => {
       }
     }, 500);
   };
+
+  //
+
+  const { scrollYProgress } = useScroll({
+    target: workRef,
+    offset: ["0 1", "0.28 1"],
+    layoutEffect: false,
+  });
+
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
 
   return (
     <>

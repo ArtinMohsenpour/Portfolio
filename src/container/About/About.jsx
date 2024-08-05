@@ -33,16 +33,18 @@ const About = () => {
   const { scrollYProgress } = useScroll({
     target: { leftTextRef },
     offset: ["0 1", "0.24 1"],
+    layoutEffect: false,
   });
   const scrollLeftProgress = useTransform(
     scrollYProgress,
     [0, 1],
     ["-40%", "0%"]
   );
-  
+
   const { scrollYProgress: rightScrollProgress } = useScroll({
     target: { leftTextRef },
     offset: ["0 1", "0.24 1"],
+    layoutEffect: false,
   });
   const scrollRightProgress = useTransform(
     rightScrollProgress,

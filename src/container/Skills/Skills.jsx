@@ -17,14 +17,6 @@ const Skills = () => {
   const headingRef = useRef(null);
 
   // Scroll progress for heading
-  const { scrollYProgress } = useScroll({
-    target: headingRef,
-    offset: ["0 1", "1 0"],
-  });
-
-  // Transform the progress to letter-spacing values
-  const letterSpacing = useTransform(scrollYProgress, [0, 0.7], ["1em", "0em"]);
-
 
   //
   // const skillsArray = [
@@ -113,13 +105,23 @@ const Skills = () => {
     fetchSkills();
   }, []);
 
+  //
+
+  const { scrollYProgress } = useScroll({
+    target: headingRef,
+    offset: ["0 1", "1 0"],
+    layoutEffect: false,
+  });
+
+  // Transform the progress to letter-spacing values
+  const letterSpacing = useTransform(scrollYProgress, [0, 0.7], ["1em", "0em"]);
+
   return (
     <>
       <motion.h2
         ref={headingRef}
         style={{
           letterSpacing: letterSpacing,
-          
         }}
         className="head-text"
       >
