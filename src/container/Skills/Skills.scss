@@ -24,6 +24,8 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  
+  
 }
 
 
@@ -33,7 +35,7 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
-
+  
   
 
   @media screen and (max-width: 900px) {
@@ -65,7 +67,7 @@
 &:hover::after {
   content: "";
   position: absolute;
-  inset: 0.20rem;
+  inset: 0.0rem;
   z-index: -1000000;
   
   border-radius: 50%;
@@ -83,7 +85,7 @@
 }
 
 .hovered::after {
-  filter: blur(4.5rem);
+  filter: blur(1.5rem);
   z-index: -100000;
 }
 
@@ -116,6 +118,14 @@
   p {
     font-weight: 500;
     margin-top: 0.5rem;
+    transition: transform 0.3s ease, font-weight 0.3s ease;
+  }
+
+  &:hover{
+    p {
+      font-weight: 500;
+      transform: scale(1.2);
+    }
   }
 
   @media screen and (min-width: 1920px) {
@@ -133,7 +143,13 @@
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-
+h2{
+  font-weight: 800;
+  color: var(--gray-color);
+  margin-bottom: 5px;
+  margin-left: 25px;
+  align-items: end;
+}
   @media screen and (max-width: 900px) {
     margin-top: 2rem;
   }
@@ -305,6 +321,12 @@ color: #264148bf;
   p{
     margin: 0;
   }
+
+  &:hover{
+    p{
+      font-weight: bold;
+    }
+  }
 }
 .skill__row2{
   display: flex; /* Use flexbox */
@@ -325,6 +347,14 @@ color: #264148bf;
   p{
     margin: 0.2rem;
   }
+
+  
+  @media screen and (max-width: 720px) {
+    width: 100%;
+    
+    flex-direction: column;;
+  }
+  
 }
 
 .card__container_item {

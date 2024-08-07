@@ -124,12 +124,27 @@ const Skills = () => {
   const letterSpacing = useTransform(scrollYProgress, [0, 0.7], ["0.8em", "0em"]);
   const skillsGap = useTransform(skillsRefProgress, [0, 0.2], ["5rem", "1rem"]);
 
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 720);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 720);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
       <motion.h2
         ref={headingRef}
         style={{
-          letterSpacing: letterSpacing,
+          letterSpacing: isMobile ? "initial" : letterSpacing,
         }}
         className="head-text"
       >
@@ -140,10 +155,13 @@ const Skills = () => {
         <div className="app__skills-listContainer">
           {/* //<SkillsRows skills={skills} /> */}
           {skills.map((skill) => (
-            <motion.div className="app__skills-item app__flex " ref={skillsRef}
-            style={{
-              marginRight: skillsGap,
-            }}>
+            <motion.div
+              className="app__skills-item app__flex "
+              ref={skillsRef}
+              style={{
+                marginRight: skillsGap,
+              }}
+            >
               <Tilt
                 className="app__flex shadow__2"
                 style={{ backgroundColor: skill.bgColor }}
@@ -206,6 +224,7 @@ const Skills = () => {
           </motion.div>
         </div>
         <div className="app__skills-exp">
+          <h2 className="">Experiences</h2>
           {experiences?.map((experience) => (
             <div key={experience.year + `${Math.random() * 100}`}>
               <motion.div

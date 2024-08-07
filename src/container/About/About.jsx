@@ -52,12 +52,27 @@ const About = () => {
     ["+40%", "0%"]
   );
 
+  
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 720);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 720);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
       <motion.div
         ref={leftTextRef}
         style={{
-          translateX: scrollLeftProgress,
+          translateX: isMobile ? "initial" : scrollLeftProgress,
         }}
         className="head-text  "
       >
@@ -67,7 +82,7 @@ const About = () => {
       <motion.div
         ref={rightTextRef}
         style={{
-          translateX: scrollRightProgress,
+          translateX: isMobile ? "initial" : scrollRightProgress,
         }}
         className="head-text"
       >
