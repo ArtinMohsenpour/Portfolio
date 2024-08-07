@@ -61,7 +61,7 @@ const Work = () => {
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 720);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1280);
 
   useEffect(() => {
     const handleResize = () => {
@@ -101,8 +101,8 @@ const Work = () => {
         className="app__work-portfolio"
         ref={workRef}
         style={{
-          scale: scaleProgress,
-          opacity: scaleProgress,
+          scale: isMobile ? "initial" : scaleProgress,
+          opacity: isMobile ? "initial" : scaleProgress,
         }}
       >
         {filterWork.map((work, index) => (
