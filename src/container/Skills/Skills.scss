@@ -69,15 +69,17 @@
   z-index: -1000000;
   
   border-radius: 50%;
-  background: linear-gradient(
-    var(--gradient-angle),
+  background: radial-gradient(
+    circle closest-side,
     var(--clr-6),
     var(--clr-7),
     var(--clr-8),
     var(--clr-9),
     var(--clr-10)
   );
-  animation: rotation 5.1s linear infinite;
+  background-position: center;
+  background-repeat: repeat;
+  animation: scalePulse 2.5s linear infinite;
 }
 
 .hovered::after {
@@ -85,29 +87,20 @@
   z-index: -100000;
 }
 
-@keyframes rotation {
-  0% {
-    --gradient-angle: 0deg;
+@keyframes scalePulse {
+  0%, 100% {
+    background-size: 90%;
   }
-  12%{
-    --gradient-angle: 45deg;
+  25% {
+    background-size: 100%;
   }
-  37%{
-    --gradient-angle: 135deg;
+  50% {
+    background-size: 90%;
   }
-
-  50%{
-    --gradient-angle: 180deg;
-  }
-  
-  100% {
-    --gradient-angle:0deg;
+  75% {
+    background-size: 100%;
   }
 }
-    &:hover {
-      box-shadow: 0 0 25px #fef4f5;
-      
-    }
 
     @media screen and (min-width: 1920px) {
       width: 150px;
