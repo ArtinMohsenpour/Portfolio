@@ -61,9 +61,52 @@
       width: 50%;
       height: 50%;
     }
+&:hover::before,
+&:hover::after {
+  content: "";
+  position: absolute;
+  inset: 0.20rem;
+  z-index: -1000000;
+  
+  border-radius: 50%;
+  background: linear-gradient(
+    var(--gradient-angle),
+    var(--clr-6),
+    var(--clr-7),
+    var(--clr-8),
+    var(--clr-9),
+    var(--clr-10)
+  );
+  animation: rotation 5.1s linear infinite;
+}
 
+.hovered::after {
+  filter: blur(4.5rem);
+  z-index: -100000;
+}
+
+@keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  12%{
+    --gradient-angle: 45deg;
+  }
+  37%{
+    --gradient-angle: 135deg;
+  }
+
+  50%{
+    --gradient-angle: 180deg;
+  }
+  
+  100% {
+    --gradient-angle:0deg;
+  }
+}
     &:hover {
       box-shadow: 0 0 25px #fef4f5;
+      
     }
 
     @media screen and (min-width: 1920px) {

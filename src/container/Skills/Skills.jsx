@@ -15,6 +15,7 @@ const Skills = () => {
   const [companyName, setCompanyName] = useState("");
 
   const headingRef = useRef(null);
+  const skillsRef = useRef(null);
 
   // Scroll progress for heading
 
@@ -113,8 +114,15 @@ const Skills = () => {
     layoutEffect: false,
   });
 
+  const { scrollYProgress: skillsRefProgress } = useScroll({
+    target: skillsRef,
+    offset: ["0 1", "0.8 0"],
+    layoutEffect: false,
+  });
+
   // Transform the progress to letter-spacing values
-  const letterSpacing = useTransform(scrollYProgress, [0, 0.7], ["1em", "0em"]);
+  const letterSpacing = useTransform(scrollYProgress, [0, 0.7], ["0.8em", "0em"]);
+  const skillsGap = useTransform(skillsRefProgress, [0, 0.2], ["5rem", "1rem"]);
 
   return (
     <>
@@ -132,7 +140,10 @@ const Skills = () => {
         <div className="app__skills-listContainer">
           {/* //<SkillsRows skills={skills} /> */}
           {skills.map((skill) => (
-            <div className="app__skills-item app__flex ">
+            <motion.div className="app__skills-item app__flex " ref={skillsRef}
+            style={{
+              marginRight: skillsGap,
+            }}>
               <Tilt
                 className="app__flex shadow__2"
                 style={{ backgroundColor: skill.bgColor }}
@@ -146,7 +157,7 @@ const Skills = () => {
               <p key={skill.name + `${Math.random() * 100}`} className="p-text">
                 {skill.name}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
         <div className="card__container">
