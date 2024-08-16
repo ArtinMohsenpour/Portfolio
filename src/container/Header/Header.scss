@@ -251,7 +251,7 @@
     object-fit: contain;
     z-index: 1;
     border: 1rem;
-    filter: drop-shadow(1px  1px  17px rgb(17, 10, 10));
+    filter: drop-shadow(1px  1px  20px rgb(17, 10, 10));
   }
 
   .overlay_circle {
@@ -361,6 +361,7 @@
     backdrop-filter: blur(3px);
     z-index: 5;
   }
+  
 }
 
 .box__container .shadow__1 {

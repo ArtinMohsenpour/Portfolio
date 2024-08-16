@@ -224,8 +224,8 @@ h2{
   display: flex;
   width: 100%;
   justify-content: space-between;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   @media screen and (max-width: 450px) {
     justify-content: center;
     flex-direction: column;
@@ -290,8 +290,9 @@ color: #264148bf;
   
   @media screen and (max-width: 920px) {
     width: 100%;
-    
+    padding: 0rem;
     margin-top: 1.2rem;
+    text-size-adjust: 0.5rem;
   }
   
   @media screen and (min-width: 1920px) {
@@ -327,6 +328,15 @@ color: #264148bf;
       font-weight: bold;
     }
   }
+
+  @media screen and (max-width: 720px) {
+    width: 90%;
+    margin: 0rem;
+    padding: 0.3rem;
+    justify-content: center;
+    align-items: center;
+    
+  }
 }
 .skill__row2{
   display: flex; /* Use flexbox */
@@ -359,10 +369,22 @@ color: #264148bf;
 
 .card__container_item {
   background-color: #f9f9f985;
+  justify-content: center;
   margin: 0.25rem;
   padding: 0.18rem;
   padding-inline: 0.48rem;
   border-radius: 5px;
+  @media screen and (max-width: 720px) {
+    flex-direction: row;
+    margin-inline-start: 0.2rem;
+  padding: 0rem;
+  padding-inline: 0.5rem;
+    p{
+      justify-content: center;
+      text-align: center;
+      font-size: x-small;
+    }
+  }
   
 }
 
